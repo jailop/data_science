@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('adult.data', header=None)
+data = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data', header=None)
 data.columns = [
         'age', 'workclass', 'fnlwgt', 'education', 'education-num', 
         'marital-status', 'occupation', 'relationship', 'race', 'sex', 
