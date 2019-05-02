@@ -1,7 +1,7 @@
 # KNN C++ implementation
 
 ~~~~
-Usage:
+Usage: ./evaluate [OPTIONS] dataset
   -e : Number of entities
   -a : Number of attributes
   -p : Proportion for train and test
@@ -11,3 +11,7 @@ Usage:
        1 : Linear normatilization
        2 : Gaussian normailization
 ~~~~
+
+Example:
+
+    $ ./evaluate -e 150 -a 5 iris.csv
