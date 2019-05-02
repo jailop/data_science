@@ -1,5 +1,10 @@
 # KNN C++ implementation
 
+![](knn.jpg)
+
+This is a C++ implementation of the k-nearest neighbors algorithm for
+classifition.
+
 ~~~~
 Usage: ./evaluate [OPTIONS] dataset
   -e : Number of entities
