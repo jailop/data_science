@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Artículos científicos</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Artículos sobre investigación indizados en Central American
+                Journals Online</h1>
+            {% for art in articles %}
+            <h3><a href="{{ art['url'] }}">{{ art['title'] }}</a></h3>
+            <p>
+                <strong>{{ art['journal'] }}</strong>
+                Vol. {{ art['vol'] }},
+                {{ art['date'] }}
+                <br>
+            <small>
+                {% for author in art['authors'] %}
+                {{ author['author'] }}
+                    {% if author['institution'] != '' %}
+                    ({{ author['institution'] }})
+                    {% endif %}
+                    <br/>
+                {% endfor %}
+            </small>
+            </p>
+                {% for abstract in art['abstracts'] %}
+                <div class=>
+                    {{ abstract }}
+                </blockquote>
+                {% endfor %}
+            {% endfor %}
+            <hr>
+            <p>
+            <small>(2019, Mar.) Scraped by Jaime López, jailop AT protonmail DOT
+                com</small>
+            </p>
+        </div>
+    </body>
+</html>
+
