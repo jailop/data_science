@@ -3,14 +3,14 @@
 # This script creates an interactive plot of
 # sales forecasts by company
 #
-# 2019 - Jaime Lopez <jailop AT gmail DOT com>
+# 2019 - Jaime Lopez <jailop AT protonmail DOT com>
 
 import pandas as pd
 from bokeh.models import ColumnDataSource, DataRange1d, Select
 from bokeh.plotting import figure, save, output_file
 from bokeh.layouts import column, row
 from bokeh.io import curdoc
-from datetime import datetime
+# from datetime import datetime
 
 def dataset(source, company):
     """
@@ -39,7 +39,8 @@ def update_plot(attr, old, new):
 
 # Data preparation
 df = pd.read_csv('salesvalues.csv')
-df['ds'] = df.ds.apply(datetime.fromisoformat)
+# df['ds'] = df.ds.apply(datetime.fromisoformat)
+df['ds'] = pd.to_datetime(df['ds'])
 df['company'] = df.company.apply(str)
 # Model preparation
 company = df.company.values[0]
